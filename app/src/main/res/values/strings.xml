@@ -1,0 +1,12 @@
+<resources>
+    <string name="app_name">Machu Picture</string>
+
+    <!-- TODO: Remove or change this placeholder text -->
+    <string name="hello_blank_fragment">Hello blank fragment</string>
+    <string name="photo_of_the_day_stub">Фото дня</string>
+    <string name="search_wiki">Искать в википедии</string>
+    <string name="wiki_helper_text">Количество символов</string>
+    <string name="favourite">favourite</string>
+    <string name="settings">settings</string>
+    <string name="search">search</string>
+</resources>
