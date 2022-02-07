@@ -1,6 +1,7 @@
 <?xml version="1.0" encoding="utf-8"?>
 <androidx.coordinatorlayout.widget.CoordinatorLayout xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent">
 
@@ -13,14 +14,14 @@
             android:id="@+id/main"
             android:layout_width="match_parent"
             android:layout_height="match_parent"
-            android:paddingStart="10dp"
-            android:paddingEnd="10dp">
+            android:paddingStart="@dimen/padding_main_fragment"
+            android:paddingEnd="@dimen/padding_main_fragment">
 
             <com.google.android.material.textfield.TextInputLayout
                 android:id="@+id/input_layout"
                 style="@style/Widget.MaterialComponents.TextInputLayout.OutlinedBox"
                 android:padding="@dimen/padding_big"
-                android:textColorHint="@color/first_color"
+                android:textColorHint="@color/colorPrimary"
                 android:layout_width="0dp"
                 android:layout_height="wrap_content"
                 android:hint="@string/search_wiki"
@@ -60,24 +61,19 @@
     <include layout="@layout/bottom_sheet" />
 
     <com.google.android.material.bottomappbar.BottomAppBar
+        style="@style/BottomBar"
         android:id="@+id/bottom_app_bar"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:layout_gravity="bottom"
-        app:backgroundTint="@color/first_color"
-        app:fabAlignmentMode="center"
-        app:fabCradleRoundedCornerRadius="50dp"
-        app:fabCradleMargin="3dp"
-        app:fabAnimationMode="slide"
-        app:hideOnScroll="true"
         app:layout_scrollFlags="scroll|enterAlways"
         app:navigationIcon="@drawable/ic_hamburger_menu_bottom_bar" />
 
     <com.google.android.material.floatingactionbutton.FloatingActionButton
         android:id="@+id/fab"
+        style="@style/FloatingActionButtonMyAngle"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:backgroundTint="@color/first_color"
         app:layout_anchor="@id/bottom_app_bar"
         app:srcCompat="@drawable/ic_plus_fab"
         app:tint="#FFFFFF" />

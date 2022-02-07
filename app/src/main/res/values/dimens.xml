@@ -2,4 +2,14 @@
 <resources>
     <dimen name="padding_big">20dp</dimen>
     <dimen name="corner_radius">20dp</dimen>
+    <dimen name="margin_bottom_navigation">8dp</dimen>
+    <dimen name="behavior_peek_bottom_sheet">120dp</dimen>
+    <dimen name="line_width_bottom_sheet">150dp</dimen>
+    <dimen name="line_height_bottom_sheet">2dp</dimen>
+    <dimen name="line_margin_bottom_sheet">5dp</dimen>
+    <dimen name="margin_text_view_bottom_sheet">5dp</dimen>
+    <dimen name="padding_text_view_bottom_sheet">10dp</dimen>
+    <dimen name="padding_bottom_text_view_bottom_sheet">60dp</dimen>
+    <dimen name="padding_main_fragment">10dp</dimen>
+    <dimen name="heading_size">10sp</dimen>
 </resources>
