@@ -2,15 +2,53 @@
     <!-- Base application theme. -->
     <style name="Theme.MachuPicture" parent="Theme.MaterialComponents.Light.NoActionBar">
         <!-- Primary brand color. -->
-        <item name="colorPrimary">@color/purple_500</item>
+        <item name="colorPrimary">@color/colorPrimary</item>
         <item name="colorPrimaryVariant">@color/purple_700</item>
         <item name="colorOnPrimary">@color/white</item>
         <!-- Secondary brand color. -->
-        <item name="colorSecondary">@color/teal_200</item>
+        <item name="colorSecondary">@color/mint</item>
         <item name="colorSecondaryVariant">@color/teal_700</item>
         <item name="colorOnSecondary">@color/black</item>
         <!-- Status bar color. -->
         <item name="android:statusBarColor" tools:targetApi="l">?attr/colorPrimaryVariant</item>
         <!-- Customize your theme here. -->
+
+        <item name="textColorConnected">@color/colorPrimary</item>
+
+        <item name="textAppearanceButton">@style/AppTextAppearance.Button</item>
+        <item name="shapeAppearanceSmallComponent">@style/AppShapeAppearance.SmallComponent</item>
+        <item name="shapeAppearanceMediumComponent">@style/AppShapeAppearance.MediumComponent</item>
+
+        <item name="materialButtonStyle">@style/AppButton</item>
+        <item name="textInputStyle">@style/AppTextField</item>
+        <item name="materialCardViewStyle">@style/AppCard</item>
+        <item name="floatingActionButtonStyle">@style/FloatingActionButtonMy</item>
+        <item name="bottomAppBarStyle">@style/BottomBar</item>
+    </style>
+
+    <style name="Theme.MachuPictureAngular" parent="Theme.MaterialComponents.Light.NoActionBar">
+        <!-- Primary brand color. -->
+        <item name="colorPrimary">@color/colorPrimaryAngle</item>
+        <item name="colorPrimaryVariant">@color/purple_700</item>
+        <item name="colorOnPrimary">@color/white</item>
+        <!-- Secondary brand color. -->
+        <item name="colorSecondary">@color/violet</item>
+        <item name="colorSecondaryVariant">@color/teal_700</item>
+        <item name="colorOnSecondary">@color/black</item>
+        <!-- Status bar color. -->
+        <item name="android:statusBarColor" tools:targetApi="l">?attr/colorPrimaryVariant</item>
+        <!-- Customize your theme here. -->
+
+        <item name="textColorConnected">@color/colorPrimary</item>
+
+        <item name="textAppearanceButton">@style/AppTextAppearance.Button</item>
+        <item name="shapeAppearanceSmallComponent">@style/AppShapeAppearance.SmallComponent.Angular</item>
+        <item name="shapeAppearanceMediumComponent">@style/AppShapeAppearance.MediumComponent.Angular</item>
+
+        <item name="materialButtonStyle">@style/AppButton</item>
+        <item name="textInputStyle">@style/AppTextField</item>
+        <item name="materialCardViewStyle">@style/AppCard</item>
+        <item name="extendedFloatingActionButtonStyle">@style/FloatingActionButtonMyAngle</item>
+        <item name="bottomAppBarStyle">@style/BottomBar</item>
     </style>
 </resources>

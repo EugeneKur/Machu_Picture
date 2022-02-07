@@ -9,4 +9,6 @@
     <string name="favourite">favourite</string>
     <string name="settings">settings</string>
     <string name="search">search</string>
+    <string name="shared_preference_theme" />
+    <string name="key_theme_id" />
 </resources>
