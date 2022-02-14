@@ -22,10 +22,6 @@ class ChipsFragment: Fragment() {
 
     override fun onViewCreated(view: View, savedInstanceState: Bundle?) {
         super.onViewCreated(view, savedInstanceState)
-
-        base.setOnClickListener {
-            Toast.makeText(context, "sfgv", Toast.LENGTH_SHORT).show()
-        }
         val sharedPreferences = activity?.getPreferences(Context.MODE_PRIVATE)
         chipGroup.setOnCheckedChangeListener { chipGroup, position ->
             when (position) {
@@ -45,14 +41,6 @@ class ChipsFragment: Fragment() {
 
                 Toast.makeText(context, "Выбран ${it.text}", Toast.LENGTH_SHORT).show()
             }
-        }
-
-        chip_close.setOnCloseIconClickListener {
-            Toast.makeText(
-                context,
-                "Close is Clicked",
-                Toast.LENGTH_SHORT
-            ).show()
         }
     }
 }

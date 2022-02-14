@@ -3,17 +3,32 @@
   <component name="DesignSurface">
     <option name="filePathToZoomLevelMap">
       <map>
+        <entry key="..\:/Users/kurilov.eo.SCS/AndroidStudioProjects/MachuPicture/app/src/main/res/drawable/ic_back_fab.xml" value="0.36875" />
+        <entry key="..\:/Users/kurilov.eo.SCS/AndroidStudioProjects/MachuPicture/app/src/main/res/drawable/ic_baseline_group_work_24.xml" value="0.36875" />
         <entry key="..\:/Users/kurilov.eo.SCS/AndroidStudioProjects/MachuPicture/app/src/main/res/drawable/ic_baseline_image_24.xml" value="0.16944444444444445" />
+        <entry key="..\:/Users/kurilov.eo.SCS/AndroidStudioProjects/MachuPicture/app/src/main/res/drawable/ic_earth.xml" value="0.22135416666666666" />
         <entry key="..\:/Users/kurilov.eo.SCS/AndroidStudioProjects/MachuPicture/app/src/main/res/drawable/ic_hamburger_menu_bottom_bar.xml" value="0.22135416666666666" />
         <entry key="..\:/Users/kurilov.eo.SCS/AndroidStudioProjects/MachuPicture/app/src/main/res/drawable/ic_launcher_background.xml" value="0.22135416666666666" />
+        <entry key="..\:/Users/kurilov.eo.SCS/AndroidStudioProjects/MachuPicture/app/src/main/res/drawable/ic_load_error_vector.xml" value="0.36875" />
         <entry key="..\:/Users/kurilov.eo.SCS/AndroidStudioProjects/MachuPicture/app/src/main/res/drawable/ic_no_photo.xml" value="0.21794871794871795" />
+        <entry key="..\:/Users/kurilov.eo.SCS/AndroidStudioProjects/MachuPicture/app/src/main/res/drawable/ic_plus_fab.xml" value="0.36875" />
+        <entry key="..\:/Users/kurilov.eo.SCS/AndroidStudioProjects/MachuPicture/app/src/main/res/drawable/ic_rearth.xml" value="0.36875" />
         <entry key="..\:/Users/kurilov.eo.SCS/AndroidStudioProjects/MachuPicture/app/src/main/res/drawable/ic_twotone_arrow_forward_24.xml" value="0.21794871794871795" />
+        <entry key="..\:/Users/kurilov.eo.SCS/AndroidStudioProjects/MachuPicture/app/src/main/res/drawable/ic_weather.xml" value="0.36875" />
+        <entry key="..\:/Users/kurilov.eo.SCS/AndroidStudioProjects/MachuPicture/app/src/main/res/drawable/ic_wikipedia.xml" value="0.36875" />
         <entry key="..\:/Users/kurilov.eo.SCS/AndroidStudioProjects/MachuPicture/app/src/main/res/font/font_main.xml" value="0.23541666666666666" />
+        <entry key="..\:/Users/kurilov.eo.SCS/AndroidStudioProjects/MachuPicture/app/src/main/res/layout/activity_api.xml" value="0.20520833333333333" />
         <entry key="..\:/Users/kurilov.eo.SCS/AndroidStudioProjects/MachuPicture/app/src/main/res/layout/activity_main.xml" value="0.2015625" />
         <entry key="..\:/Users/kurilov.eo.SCS/AndroidStudioProjects/MachuPicture/app/src/main/res/layout/bottom_navigation_layout.xml" value="0.20520833333333333" />
         <entry key="..\:/Users/kurilov.eo.SCS/AndroidStudioProjects/MachuPicture/app/src/main/res/layout/bottom_sheet.xml" value="0.20520833333333333" />
+        <entry key="..\:/Users/kurilov.eo.SCS/AndroidStudioProjects/MachuPicture/app/src/main/res/layout/fragment_before_yesterday.xml" value="0.20520833333333333" />
         <entry key="..\:/Users/kurilov.eo.SCS/AndroidStudioProjects/MachuPicture/app/src/main/res/layout/fragment_chips.xml" value="0.19114583333333332" />
+        <entry key="..\:/Users/kurilov.eo.SCS/AndroidStudioProjects/MachuPicture/app/src/main/res/layout/fragment_earth.xml" value="0.35260416666666666" />
+        <entry key="..\:/Users/kurilov.eo.SCS/AndroidStudioProjects/MachuPicture/app/src/main/res/layout/fragment_mars.xml" value="0.35260416666666666" />
         <entry key="..\:/Users/kurilov.eo.SCS/AndroidStudioProjects/MachuPicture/app/src/main/res/layout/fragment_picture_of_the_day.xml" value="0.20520833333333333" />
+        <entry key="..\:/Users/kurilov.eo.SCS/AndroidStudioProjects/MachuPicture/app/src/main/res/layout/fragment_today.xml" value="0.20520833333333333" />
+        <entry key="..\:/Users/kurilov.eo.SCS/AndroidStudioProjects/MachuPicture/app/src/main/res/layout/fragment_weather.xml" value="0.35260416666666666" />
+        <entry key="..\:/Users/kurilov.eo.SCS/AndroidStudioProjects/MachuPicture/app/src/main/res/layout/fragment_yesterday.xml" value="0.20520833333333333" />
         <entry key="..\:/Users/kurilov.eo.SCS/AndroidStudioProjects/MachuPicture/app/src/main/res/layout/main_fragment.xml" value="0.25" />
         <entry key="..\:/Users/kurilov.eo.SCS/AndroidStudioProjects/MachuPicture/app/src/main/res/menu/menu_bottom_bar.xml" value="0.20520833333333333" />
         <entry key="..\:/Users/kurilov.eo.SCS/AndroidStudioProjects/MachuPicture/app/src/main/res/menu/menu_bottom_bar_other_screen.xml" value="0.20520833333333333" />
