@@ -48,7 +48,7 @@ class PictureOfTheDayFragment : Fragment() {
     override fun onActivityCreated(savedInstanceState: Bundle?) {
         super.onActivityCreated(savedInstanceState)
         viewModel = ViewModelProvider(this).get(PictureOfTheDayViewModel::class.java)
-        viewModel.getData(DATE_TODAY).observe(this@PictureOfTheDayFragment, Observer<PictureOfTheDayData> { renderData(it, TODAY) })
+        viewModel.getData(DATE_TODAY).observe(this@PictureOfTheDayFragment, Observer<PictureOfTheDayData> { renderData(it) })
     }
 
     override fun onViewCreated(view: View, savedInstanceState: Bundle?) {
@@ -69,30 +69,30 @@ class PictureOfTheDayFragment : Fragment() {
 
         view_pager.addOnPageChangeListener(object : ViewPager.OnPageChangeListener {
 
-            @SuppressLint("FragmentLiveDataObserve")
             override fun onPageSelected(position: Int) {
+
                 when (position) {
                     0 -> {
-                        viewModel.getData(DATE_TODAY).observe(this@PictureOfTheDayFragment, Observer<PictureOfTheDayData> { renderData(it, TODAY) })
 
                     }
                     1 -> {
-                        viewModel.getData(DATE_YESTERDAY).observe(this@PictureOfTheDayFragment, Observer<PictureOfTheDayData> { renderData(it, YESTERDAY) })
 
                     }
                     2 -> {
-                        viewModel.getData(DATE_BEFORE_YESTERDAY).observe(this@PictureOfTheDayFragment, Observer<PictureOfTheDayData> { renderData(it, TODAY) })
+
 
                     }
                     else -> {
-                        viewModel.getData(DATE_TODAY).observe(this@PictureOfTheDayFragment, Observer<PictureOfTheDayData> { renderData(it,TODAY) })
+
 
                     }
                 }
             }
 
             override fun onPageScrollStateChanged(state: Int) {}
-            override fun onPageScrolled(position: Int, positionOffset: Float,  positionOffsetPixels: Int) {}
+            override fun onPageScrolled(position: Int, positionOffset: Float,  positionOffsetPixels: Int) {
+
+            }
         })
 
     }
@@ -137,40 +137,13 @@ class PictureOfTheDayFragment : Fragment() {
         }
     }
 
-    private fun renderData(data: PictureOfTheDayData, fragment: Int) {
+    private fun renderData(data: PictureOfTheDayData) {
         when (data) {
             is PictureOfTheDayData.Success -> {
                 val serverResponseData = data.serverResponseData
                 val url = serverResponseData.url
                 bottom_sheet_description_header.text = serverResponseData.title
                 bottom_sheet_description.text = serverResponseData.explanation
-                    if (url.isNullOrEmpty()) {
-                    Toast.makeText(context, "Пустая ссылка", Toast.LENGTH_SHORT)
-                } else {
-                        when (fragment) {
-                            0 -> image_view_today.load(url) {
-                                lifecycle(this@PictureOfTheDayFragment)
-                                error(R.drawable.ic_load_error_vector)
-                                placeholder(R.drawable.ic_no_photo)
-                            }
-                            1 -> image_view_yesterday.load(url) {
-                                lifecycle(this@PictureOfTheDayFragment)
-                                error(R.drawable.ic_load_error_vector)
-                                placeholder(R.drawable.ic_no_photo)
-                            }
-                            2 -> image_view_before_yesterday.load(url) {
-                                lifecycle(this@PictureOfTheDayFragment)
-                                error(R.drawable.ic_load_error_vector)
-                                placeholder(R.drawable.ic_no_photo)
-                            }
-                            else -> image_view_today.load(url) {
-                                lifecycle(this@PictureOfTheDayFragment)
-                                error(R.drawable.ic_load_error_vector)
-                                placeholder(R.drawable.ic_no_photo)
-                            }
-                        }
-
-                }
             }
             is PictureOfTheDayData.Loading -> {
 

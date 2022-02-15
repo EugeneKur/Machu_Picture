@@ -1,5 +1,6 @@
 package ru.geekbrains.machupicture.picture
 
+import androidx.lifecycle.LifecycleOwner
 import androidx.lifecycle.LiveData
 import androidx.lifecycle.MutableLiveData
 import androidx.lifecycle.ViewModel
@@ -19,7 +20,9 @@ import ru.geekbrains.machupicture.BuildConfig
             return liveDataForViewToObserve
         }
 
-
+        fun deleteObservers (owner: LifecycleOwner) {
+            liveDataForViewToObserve.removeObservers(owner)
+        }
 
         private fun sendServerRequest(date: String) {
             liveDataForViewToObserve.value = PictureOfTheDayData.Loading(null)
