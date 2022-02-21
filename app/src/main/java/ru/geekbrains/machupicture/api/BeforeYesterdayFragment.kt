@@ -23,6 +23,8 @@ import ru.geekbrains.machupicture.picture.PictureOfTheDayViewModel
 private const val DATE_TODAY = "2022-02-08"
 private const val DATE_YESTERDAY = "2022-02-07"
 private const val DATE_BEFORE_YESTERDAY = "2022-02-06"
+var TITLE_BEFORE_YESTERDAY = ""
+var EXPLANATION_BEFORE_YESTERDAY = ""
 
 class BeforeYesterdayFragment : Fragment() {
 
@@ -42,11 +44,7 @@ class BeforeYesterdayFragment : Fragment() {
 
     override fun onViewCreated(view: View, savedInstanceState: Bundle?) {
         super.onViewCreated(view, savedInstanceState)
-        input_layout.setEndIconOnClickListener {
-            startActivity(Intent(Intent.ACTION_VIEW).apply {
-                data = Uri.parse("https://en.wikipedia.org/wiki/${input_edit_text.text.toString()}")
-            })
-        }
+
     }
 
     private fun renderData(data: PictureOfTheDayData) {
@@ -54,8 +52,8 @@ class BeforeYesterdayFragment : Fragment() {
             is PictureOfTheDayData.Success -> {
                 val serverResponseData = data.serverResponseData
                 val url = serverResponseData.url
-                bottom_sheet_description_header.text = serverResponseData.title
-                bottom_sheet_description.text = serverResponseData.explanation
+                TITLE_BEFORE_YESTERDAY = serverResponseData.title.toString()
+                EXPLANATION_BEFORE_YESTERDAY = serverResponseData.explanation.toString()
                 if (url.isNullOrEmpty()) {
                     Toast.makeText(context, "Пустая ссылка", Toast.LENGTH_SHORT)
                 } else {

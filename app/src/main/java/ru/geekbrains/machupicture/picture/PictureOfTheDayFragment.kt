@@ -15,6 +15,7 @@ import androidx.viewpager.widget.ViewPager
 import coil.load
 import com.google.android.material.bottomappbar.BottomAppBar
 import com.google.android.material.bottomsheet.BottomSheetBehavior
+import geekbarains.material.ui.api.*
 import kotlinx.android.synthetic.main.bottom_sheet.*
 import kotlinx.android.synthetic.main.fragment_before_yesterday.*
 import kotlinx.android.synthetic.main.fragment_today.*
@@ -73,17 +74,22 @@ class PictureOfTheDayFragment : Fragment() {
 
                 when (position) {
                     0 -> {
-
+                        bottom_sheet_description_header.text = TITLE_TODAY
+                        bottom_sheet_description.text = EXPLANATION_TODAY
                     }
                     1 -> {
+                        bottom_sheet_description_header.text = TITLE_YESTERDAY
+                        bottom_sheet_description.text = EXPLANATION_YESTERDAY
 
                     }
                     2 -> {
-
+                        bottom_sheet_description_header.text = TITLE_BEFORE_YESTERDAY
+                        bottom_sheet_description.text = EXPLANATION_BEFORE_YESTERDAY
 
                     }
                     else -> {
-
+                        bottom_sheet_description_header.text = TITLE_TODAY
+                        bottom_sheet_description.text = EXPLANATION_TODAY
 
                     }
                 }
