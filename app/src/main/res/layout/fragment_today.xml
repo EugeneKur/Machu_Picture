@@ -38,8 +38,7 @@
             app:layout_constraintBottom_toBottomOf="@+id/field"
             app:layout_constraintEnd_toEndOf="parent"
             app:layout_constraintStart_toStartOf="parent"
-            app:srcCompat="@drawable/ic_up"/>
-
+            app:srcCompat="@drawable/ic_up" />
 
     </androidx.constraintlayout.motion.widget.MotionLayout>
 
