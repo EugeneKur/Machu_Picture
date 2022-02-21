@@ -1,0 +1,12 @@
+<?xml version="1.0" encoding="utf-8"?>
+<MotionScene xmlns:motion="http://schemas.android.com/apk/res-auto"
+    xmlns:android="http://schemas.android.com/apk/res/android">
+
+    <Transition
+        motion:constraintSetEnd="@layout/fragment_chips"
+        motion:constraintSetStart="@layout/fragment_chips_start"
+        motion:duration="1000">
+
+        <OnClick motion:targetId="@id/chip_button" />
+    </Transition>
+</MotionScene>

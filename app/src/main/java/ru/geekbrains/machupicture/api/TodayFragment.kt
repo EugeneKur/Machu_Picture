@@ -28,6 +28,8 @@ import ru.geekbrains.machupicture.picture.*
 private const val DATE_TODAY = "2022-02-08"
 private const val DATE_YESTERDAY = "2022-02-07"
 private const val DATE_BEFORE_YESTERDAY = "2022-02-06"
+var TITLE_TODAY = ""
+var EXPLANATION_TODAY = ""
 
 class TodayFragment : Fragment() {
 
@@ -37,7 +39,7 @@ class TodayFragment : Fragment() {
         inflater: LayoutInflater, container: ViewGroup?,
         savedInstanceState: Bundle?
     ): View? {
-        return inflater.inflate(R.layout.fragment_today, container, false)
+        return inflater.inflate(R.layout.fragment_today_start, container, false)
     }
 
     override fun onActivityCreated(savedInstanceState: Bundle?) {
@@ -48,11 +50,7 @@ class TodayFragment : Fragment() {
 
     override fun onViewCreated(view: View, savedInstanceState: Bundle?) {
         super.onViewCreated(view, savedInstanceState)
-        input_layout.setEndIconOnClickListener {
-            startActivity(Intent(Intent.ACTION_VIEW).apply {
-                data = Uri.parse("https://en.wikipedia.org/wiki/${input_edit_text.text.toString()}")
-            })
-        }
+
     }
 
     private fun renderData(data: PictureOfTheDayData) {
@@ -60,8 +58,8 @@ class TodayFragment : Fragment() {
             is PictureOfTheDayData.Success -> {
                 val serverResponseData = data.serverResponseData
                 val url = serverResponseData.url
-                bottom_sheet_description_header.text = serverResponseData.title
-                bottom_sheet_description.text = serverResponseData.explanation
+                TITLE_TODAY = serverResponseData.title.toString()
+                EXPLANATION_TODAY = serverResponseData.explanation.toString()
                 if (url.isNullOrEmpty()) {
                     Toast.makeText(context, "Пустая ссылка", Toast.LENGTH_SHORT)
                 } else {
