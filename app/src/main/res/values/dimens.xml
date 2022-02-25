@@ -11,5 +11,5 @@
     <dimen name="padding_text_view_bottom_sheet">10dp</dimen>
     <dimen name="padding_bottom_text_view_bottom_sheet">60dp</dimen>
     <dimen name="padding_main_fragment">10dp</dimen>
-    <dimen name="heading_size">10sp</dimen>
+    <dimen name="heading_size">30sp</dimen>
 </resources>

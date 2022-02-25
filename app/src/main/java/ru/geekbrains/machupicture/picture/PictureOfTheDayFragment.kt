@@ -1,9 +1,11 @@
 package ru.geekbrains.machupicture.picture
 
-import android.annotation.SuppressLint
 import android.content.Intent
 import android.net.Uri
 import android.os.Bundle
+import android.transition.Fade
+import android.transition.Slide
+import android.transition.TransitionManager
 import android.view.*
 import android.widget.Toast
 import androidx.constraintlayout.widget.ConstraintLayout
@@ -12,7 +14,6 @@ import androidx.fragment.app.Fragment
 import androidx.lifecycle.Observer
 import androidx.lifecycle.ViewModelProvider
 import androidx.viewpager.widget.ViewPager
-import coil.load
 import com.google.android.material.bottomappbar.BottomAppBar
 import com.google.android.material.bottomsheet.BottomSheetBehavior
 import geekbarains.material.ui.api.*
@@ -36,6 +37,9 @@ private const val DATE_BEFORE_YESTERDAY = "2022-02-06"
 
 class PictureOfTheDayFragment : Fragment() {
 
+    var wikiVisible = false
+
+
     private lateinit var bottomSheetBehavior: BottomSheetBehavior<ConstraintLayout>
     private lateinit var viewModel: PictureOfTheDayViewModel
 
@@ -54,6 +58,18 @@ class PictureOfTheDayFragment : Fragment() {
 
     override fun onViewCreated(view: View, savedInstanceState: Bundle?) {
         super.onViewCreated(view, savedInstanceState)
+
+        button.setOnClickListener {
+            TransitionManager.beginDelayedTransition(main_container, Slide(Gravity.TOP))
+            wikiVisible = !wikiVisible
+
+            input_layout.visibility = if (wikiVisible) {
+                View.VISIBLE
+            } else {
+                View.GONE
+            }
+        }
+
         input_layout.setEndIconOnClickListener {
             startActivity(Intent(Intent.ACTION_VIEW).apply {
                 data = Uri.parse("https://en.wikipedia.org/wiki/${input_edit_text.text.toString()}")
