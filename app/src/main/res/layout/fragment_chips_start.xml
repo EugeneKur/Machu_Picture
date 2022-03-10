@@ -29,6 +29,7 @@
             app:layout_constraintLeft_toLeftOf="parent"
             app:layout_constraintStart_toStartOf="parent"
             app:layout_constraintTop_toTopOf="parent"
+            android:fontFamily="@font/aldrich"
             app:layout_constraintVertical_bias="0.05" />
 
         <androidx.appcompat.widget.AppCompatImageView

@@ -26,22 +26,23 @@
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:layout_marginTop="@dimen/margin_text_view_bottom_sheet"
+        android:fontFamily="@font/aldrich"
         android:paddingStart="@dimen/padding_text_view_bottom_sheet"
         android:paddingEnd="@dimen/padding_text_view_bottom_sheet"
         android:paddingBottom="@dimen/padding_bottom_text_view_bottom_sheet"
+        android:text="Описание"
         android:textColor="@color/colorPrimary"
         android:textStyle="bold"
-        android:text="Описание фото"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/bottom_sheet_line"
-        />
+        app:layout_constraintTop_toBottomOf="@+id/bottom_sheet_line" />
 
     <TextView
         android:id="@+id/bottom_sheet_description"
         style="@android:style/TextAppearance.Material.Small"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
+        android:fontFamily="@font/aldrich"
         android:paddingStart="@dimen/padding_text_view_bottom_sheet"
         android:paddingEnd="@dimen/padding_text_view_bottom_sheet"
         android:textColor="@color/colorPrimary"

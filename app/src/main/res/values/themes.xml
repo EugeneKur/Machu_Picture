@@ -24,6 +24,7 @@
         <item name="materialCardViewStyle">@style/AppCard</item>
         <item name="floatingActionButtonStyle">@style/FloatingActionButtonMy</item>
         <item name="bottomAppBarStyle">@style/BottomBar</item>
+
     </style>
 
     <style name="Theme.MachuPictureAngular" parent="Theme.MaterialComponents.Light.NoActionBar">

@@ -1,8 +1,14 @@
 package ru.geekbrains.machupicture.picture
 
 import android.content.Intent
+import android.graphics.Color
 import android.net.Uri
 import android.os.Bundle
+import android.text.Spannable
+import android.text.SpannableString
+import android.text.style.ForegroundColorSpan
+import android.text.style.StyleSpan
+import android.text.style.UnderlineSpan
 import android.transition.Fade
 import android.transition.Slide
 import android.transition.TransitionManager
@@ -53,11 +59,11 @@ class PictureOfTheDayFragment : Fragment() {
     override fun onActivityCreated(savedInstanceState: Bundle?) {
         super.onActivityCreated(savedInstanceState)
         viewModel = ViewModelProvider(this).get(PictureOfTheDayViewModel::class.java)
-        viewModel.getData(DATE_TODAY).observe(this@PictureOfTheDayFragment, Observer<PictureOfTheDayData> { renderData(it) })
     }
 
     override fun onViewCreated(view: View, savedInstanceState: Bundle?) {
         super.onViewCreated(view, savedInstanceState)
+
 
         button.setOnClickListener {
             TransitionManager.beginDelayedTransition(main_container, Slide(Gravity.TOP))
@@ -90,22 +96,22 @@ class PictureOfTheDayFragment : Fragment() {
 
                 when (position) {
                     0 -> {
-                        bottom_sheet_description_header.text = TITLE_TODAY
-                        bottom_sheet_description.text = EXPLANATION_TODAY
+                        bottom_sheet_description_header.text = setSpanTitle(TITLE_TODAY)
+                        bottom_sheet_description.text = setSpanDescription(EXPLANATION_TODAY)
                     }
                     1 -> {
-                        bottom_sheet_description_header.text = TITLE_YESTERDAY
-                        bottom_sheet_description.text = EXPLANATION_YESTERDAY
+                        bottom_sheet_description_header.text = setSpanTitle(TITLE_YESTERDAY)
+                        bottom_sheet_description.text = setSpanDescription(EXPLANATION_YESTERDAY)
 
                     }
                     2 -> {
-                        bottom_sheet_description_header.text = TITLE_BEFORE_YESTERDAY
-                        bottom_sheet_description.text = EXPLANATION_BEFORE_YESTERDAY
+                        bottom_sheet_description_header.text = setSpanTitle(TITLE_BEFORE_YESTERDAY)
+                        bottom_sheet_description.text = setSpanDescription(EXPLANATION_BEFORE_YESTERDAY)
 
                     }
                     else -> {
-                        bottom_sheet_description_header.text = TITLE_TODAY
-                        bottom_sheet_description.text = EXPLANATION_TODAY
+                        bottom_sheet_description_header.text = setSpanTitle(TITLE_TODAY)
+                        bottom_sheet_description.text = setSpanDescription(EXPLANATION_TODAY)
 
                     }
                 }
@@ -137,6 +143,36 @@ class PictureOfTheDayFragment : Fragment() {
         return super.onOptionsItemSelected(item)
     }
 
+    private fun setSpanTitle (title: String): SpannableString {
+        var spannable = SpannableString(title)
+        spannable.setSpan(
+            ForegroundColorSpan(Color.BLACK),
+            0, 1,
+            Spannable.SPAN_EXCLUSIVE_EXCLUSIVE)
+        spannable.setSpan(
+            UnderlineSpan(),
+            0, title.length,
+            Spannable.SPAN_EXCLUSIVE_EXCLUSIVE)
+        return spannable
+    }
+
+    private fun setSpanDescription (title: String): SpannableString {
+        var spannable = SpannableString(title)
+        spannable.setSpan(
+            ForegroundColorSpan(Color.BLACK),
+            0, 1,
+            Spannable.SPAN_EXCLUSIVE_EXCLUSIVE)
+        for (i in 1..title.length) {
+            if (spannable.get(i-1) == ' ') {
+                spannable.setSpan(
+                    ForegroundColorSpan(Color.BLACK),
+                    i, i+1,
+                    Spannable.SPAN_EXCLUSIVE_EXCLUSIVE)
+            }
+        }
+        return spannable
+    }
+
     private fun setBottomAppBar(view: View) {
         val context = activity as MainActivity
         context.setSupportActionBar(view.findViewById(R.id.bottom_app_bar))
@@ -155,23 +191,6 @@ class PictureOfTheDayFragment : Fragment() {
                 bottom_app_bar.fabAlignmentMode = BottomAppBar.FAB_ALIGNMENT_MODE_CENTER
                 fab.setImageDrawable(ContextCompat.getDrawable(context, R.drawable.ic_plus_fab))
                 bottom_app_bar.replaceMenu(R.menu.menu_bottom_bar)
-            }
-        }
-    }
-
-    private fun renderData(data: PictureOfTheDayData) {
-        when (data) {
-            is PictureOfTheDayData.Success -> {
-                val serverResponseData = data.serverResponseData
-                val url = serverResponseData.url
-                bottom_sheet_description_header.text = serverResponseData.title
-                bottom_sheet_description.text = serverResponseData.explanation
-            }
-            is PictureOfTheDayData.Loading -> {
-
-            }
-            is PictureOfTheDayData.Error -> {
-                Toast.makeText(context, data.error.message, Toast.LENGTH_SHORT)
             }
         }
     }
