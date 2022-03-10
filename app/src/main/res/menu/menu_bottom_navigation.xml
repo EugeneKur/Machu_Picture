@@ -3,9 +3,15 @@
     <group android:checkableBehavior="none">
         <item
             android:id="@+id/navigation_one"
-            android:title="На экран 1" />
+            android:title="На экран 1"
+            android:fontFamily="@font/aldrich" />
         <item
             android:id="@+id/navigation_two"
-            android:title="На экран 2" />
+            android:title="На экран 2"
+            android:fontFamily="@font/aldrich" />
+        <item
+            android:id="@+id/navigation_three"
+            android:title="Recycler"
+            android:fontFamily="@font/aldrich" />
     </group>
 </menu>

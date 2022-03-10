@@ -12,7 +12,7 @@
         android:supportsRtl="true"
         android:theme="@style/Theme.MachuPicture">
         <activity
-            android:name=".api.ApiActivity"
+            android:name=".recycler.RecyclerActivity"
             android:exported="false" />
         <activity
             android:name=".MainActivity"
@@ -23,6 +23,10 @@
                 <category android:name="android.intent.category.LAUNCHER" />
             </intent-filter>
         </activity>
+
+        <meta-data
+            android:name="preloaded_fonts"
+            android:resource="@array/preloaded_fonts" />
     </application>
 
 </manifest>

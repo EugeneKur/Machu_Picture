@@ -5,10 +5,12 @@
     <item
         android:id="@+id/app_bar_fav"
         android:title="@string/favourite"
-        app:showAsAction="ifRoom" />
+        app:showAsAction="ifRoom"
+        android:fontFamily="@font/aldrich" />
 
     <item
         android:id="@+id/app_bar_settings"
         android:title="@string/settings"
-        app:showAsAction="ifRoom" />
+        app:showAsAction="ifRoom"
+        android:fontFamily="@font/aldrich" />
 </menu>
