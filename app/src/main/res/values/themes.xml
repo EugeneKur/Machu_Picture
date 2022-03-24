@@ -25,6 +25,7 @@
         <item name="floatingActionButtonStyle">@style/FloatingActionButtonMy</item>
         <item name="bottomAppBarStyle">@style/BottomBar</item>
 
+
     </style>
 
     <style name="Theme.MachuPictureAngular" parent="Theme.MaterialComponents.Light.NoActionBar">
@@ -52,4 +53,10 @@
         <item name="extendedFloatingActionButtonStyle">@style/FloatingActionButtonMyAngle</item>
         <item name="bottomAppBarStyle">@style/BottomBar</item>
     </style>
+
+    <style name="Theme.MachuPicture.Splash">
+        <item name="android:windowBackground">@drawable/splash_background_drawable</item>
+    </style>
+
+
 </resources>
